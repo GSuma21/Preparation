@@ -1,0 +1,289 @@
+->What is hoisting?
+      Hoisting is a concept which enables us to extract values of variables and functions even before 
+      initialising/assigning value without getting error and this is happening due to the 
+      1st phase (memory creation phase) of the Execution Context.
+      
+      Hoisting allows functions to be safely used in code before they are declared.
+
+->What is scoping?
+        Scope determines the accessibility (visibility) of variables.
+        JavaScript has 3 types of scope:
+
+              - Block scope
+              - Function scope
+              - Global scope
+        
+        Block Scope
+           Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+           ES6 introduced two important new JavaScript keywords: let and const.
+           These two keywords provide Block Scope in JavaScript.
+           Variables declared inside a { } block cannot be accessed from outside the block
+
+        Local Scope
+           Variables declared within a JavaScript function, become LOCAL to the function.
+           Local variables have Function Scope-
+                  They can only be accessed from within the function.
+
+        Function Scope
+            JavaScript has function scope: Each function creates a new scope.
+            Variables defined inside a function are not accessible (visible) from outside the function.
+            Variables declared with var, let and const are quite similar when declared inside a function.
+
+        Global Scope
+              Variables declared Globally (outside any function) have Global Scope.
+              Global variables can be accessed from anywhere in a JavaScript program.
+              Variables declared with var, let and const are quite similar when declared outside a block.
+
+
+->How are var, let const different?
+
+Differences between var, let, and const
+
+var	                                                 let	                                          const
+The scope of a var variable                    The scope of a let                           The scope of a const 
+is functional scope.	                      variable is block scope. 	                    variable is block scope.
+
+It can be updated and                      It can be updated but cannot                  It cannot be updated or re-declared
+re-declared into the scope.	                 be re-declared into the scope.	                    into the scope.
+
+It can be declared                               It can be declared                               It cannot be declared 
+without initialization.	                        without initialization.	                        without initialization.
+
+It can be accessed without              It cannot be accessed without initialization,    It cannot be accessed without
+initialization as its default             as it returns an error.                            initialization, as it cannot be
+ value is “undefined”.	 	                                                                 declared without initialization.
+
+
+ ->What are the two main differences in arrow functions?
+      Arrow functions – a new feature introduced in ES6 – enable writing concise functions in JavaScript.
+
+      Unlike regular functions, arrow functions do not have their own this keyword.
+      Regular functions created using function declarations or expressions are ‘constructible’ and ‘callable’. 
+      Since regular functions are constructible, they can be called using the ‘new’ keyword. However, the arrow 
+      functions are only ‘callable’ and not constructible. 
+
+->Does Call apply bind work for arrow functions?
+       Call/Apply & Bind doesn’t work . Since arrow functions do not have their own this, the methods call() 
+       or apply() can only pass in parameters. this Argument is ignored. 
+
+->What does call apply bind do?
+  call()
+    The call() method invokes a function with a specified context. 
+    var obj = { num: 2 };
+     function add(a){
+         return this.num + a;
+      }
+
+  apply()
+    The apply() method does the exact same as call(). The difference is that call() accepts an argument list,
+     but apply() accepts an array of arguments.
+
+     var obj = { num: 2 };
+
+    function add(a, b){
+      return this.num + a + b;
+    }
+
+      console.log(add.apply(obj, [3, 5]));
+
+  bind()
+      The bind() method is reminiscent of call() and apply(). But instead of executing a function immediately, 
+      bind() returns a function that can be executed later on.
+
+      var obj = { num: 2 };
+
+         function add(a, b){
+            return this.num + a + b;
+         }
+
+       const func = add.bind(obj, 3, 5);
+       func(); // Returns 10
+
+
+->What are closures?
+   A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
+   a closure gives you access to an outer function's scope from an inner function. In JavaScript, 
+   closures are created every time a function is created, at function creation time.
+
+
+   ex:
+   function makeFunc() {
+  var name = 'Mozilla';
+  function displayName() {
+    alert(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+
+
+
+->Write a program to debounce a search bar?
+      another file
+
+->Write a program to throttle a search bar?
+   another file
+
+------->create a custom method for an array called myMap, use prototype chain to achieve this
+const arr = [1,2,3]
+arr.myMap(a=>a*5)
+// [ 5, 10, 15 ]
+it should work in this manner
+
+
+
+->What is event bubbling?
+
+Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside 
+another element, and both elements have registered a handle to that event. It is a process that starts
+with the element that triggered the event and then bubbles up to the containing elements in the hierarchy.
+In event bubbling, the event is first captured and handled by the innermost element and then propagated to
+outer elements.
+
+syntax:
+
+addEventListener(type, listener, useCapture)
+
+type: Use to refer to the type of event.
+listener: Function we want to call when the event of the specified type occurs.
+userCapture: Boolean value. Boolean value indicates event phase. By Default useCapture is false.
+ It means it is in the bubbling phase.
+
+->What is event loop?
+
+JavaScript has a runtime model based on an event loop, which is responsible for executing the code,
+ collecting and processing events, and executing queued sub-tasks. 
+      
+
+------->Explain promises to a 5 year old, with simple examples
+
+  Promises are used to handle asynchronous operations in JavaScript. 
+
+
+
+
+
+
+---------->Write a function called sleep that will return a promise, if you do not provide a number to the function, 
+then it will return an error and goto the catch block
+sleep(500).then(res=> {
+   console.log('slept for ${res} milli seconds})
+})
+.then(errr=>{
+    console.log(err)
+})
+
+
+->what does async await mean?
+         An async function is a function declared with the async keyword, and the await keyword is permitted within it.
+ The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, 
+ avoiding the need to explicitly configure promise chains.
+
+->What does the this keyword mean?
+      In JavaScript, the this keyword refers to an object.
+   Which object depends on how this is being invoked (used or called).
+
+->What are classes? what are getters and setters?
+   Classes are a template for creating objects. 
+   In a JavaScript class, getters and setters are used to get or set the properties values. “get” 
+   is the keyword utilized to define a getter method for retrieving the property value, whereas “set” 
+   defines a setter method for changing the value of a specific property.
+
+->How do you declare private and static variables in classes
+
+class MyClass {
+  // class constructor, equivalent to
+  // the function body of a constructor
+  constructor() {
+    const privateVariable = 'private value'; // Private variable at the constructor scope
+    this.publicVariable = 'public value'; // Public property
+
+    this.privilegedMethod = function() {
+      // Public Method with access to the constructor scope variables
+      console.log(privateVariable);
+    };
+  }
+
+  // Prototype methods:
+  publicMethod() {
+    console.log(this.publicVariable);
+  }
+
+  // Static properties shared by all instances
+  static staticProperty = 'static value';
+
+  static staticMethod() {
+    console.log(this.staticProperty);
+  }
+}
+
+
+// We can add properties to the class prototype
+MyClass.prototype.additionalMethod = function() {
+  console.log(this.publicVariable);
+};
+
+var myInstance = new MyClass();
+myInstance.publicMethod();       // "public value"
+myInstance.additionalMethod(); // "public value"
+myInstance.privilegedMethod(); // "private value"
+MyClass.staticMethod();             // "static value"
+
+
+
+------------->Create a Calculator class, it should be able to add, reduce multiply and divide. it should have a value getter, 
+and that should return final output. keep the history of changes made as well, and keep that private, and a user
+ should be able to see previous changes made to the value
+
+
+
+         
+
+
+
+->What is currying?
+
+   Currying is an advanced technique of working with functions
+   Currying is a transformation of functions that translates a function from callable as f(a, b, c) into
+    callable as f(a)(b)(c).
+   Currying doesn’t call a function. It just transforms it.
+
+function curry(f) { // curry(f) does the currying transform
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+// usage
+function sum(a, b) {
+  return a + b;
+}
+
+let curriedSum = curry(sum);
+
+alert( curriedSum(1)(2) ); // 3
+
+
+
+->Write a program to flatten an array
+  arr = [1,2,[3,4],5]
+   function flatten(input){
+     const stack = [...input];
+     const res = []
+     while(stack.length){
+       const next = stack.pop();
+       if(Array.isArray(next)){
+         stack.push(...next);
+       }else{
+         res.push(next);
+       }
+     }
+     return res.reverse();
+   }
+
+   let newArray2 = flatten(arr)
+

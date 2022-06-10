@@ -1,0 +1,263 @@
+->What is the difference between flex and grids?
+  Grid:CSS Grid Layout, is a two-dimensional grid-based layout system with rows and columns, making it 
+easier to design web pages without having to use floats and positioning.
+ Like tables, grid layout allow us to align elements into columns and rows.
+
+Flex: The CSS Flex offers a one-dimensional layout. It is helpful in allocating and aligning 
+the space among items in a container (made of grids). It works with all kinds of display devices
+ and screen sizes.
+To get started you have to define a container element as a grid with display: flex;
+
+One Vs Two Dimension:Grid is made for two-dimensional layout while Flexbox is for one. 
+                     This means Flexbox can work on either row or columns at a time, but Grids can work on both
+Content-First vs Layout-First:Major Uniqueness between Flexbox and Grids is that the former works on content
+                         while the latter is based on the layout.
+                         The Flexbox layout is best suited to application components and small-scale layouts, 
+                         while the Grid layout is designed for larger-scale layouts that are not linear in design.
+
+    Property                            Grid                              Flexbox
+
+    Dimension                       Two – Dimensional                 One – Dimensional
+
+    Features                   Can flex combination of items          Can push content element
+                            through space-occupying Features            to extreme alignment
+                               
+   Support Type                       Layout First                        Content First
+
+->Give an example where we have to use grids and where you have to use flexbox?
+        Flexbox is a one-dimensional layout system that we can use to create a row or a column axis layout
+    example:
+    --HTML
+    <div id="container">
+      <div id="one">1</div>
+      <div id="two">2</div>
+      <div id="three">3</div>
+    </div>
+
+     --CSS
+    #container {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-evenly;
+         padding: 10px;
+     }
+
+     CSS grid is a two-dimensional layout system, we can work withs rows and columns together, which means that 
+     it opens a lot of different possibilities to build more complex and organized design systems
+          
+          --HTML
+          <div id="container">
+            <header>Header</header>
+            <aside>Aside</aside>
+            <main>Main</main>
+            <footer>Footer</footer>
+          </div>
+
+          --CSS
+          #container {
+             width: 100%;
+             height: 100vh;
+             background: yellow;
+             display: grid;
+             grid-template-rows: 80px 600px 80px;
+             grid-template-columns: 0.5fr 1fr;
+           }
+
+
+-> Give an example where you cannot use flexbox, and you can only use grids?
+            Flexbox is one dimentional and grid is 2 dimentional so example which flexbox will not work properly 
+            is............
+
+Flexbox:
+            <div class="wrapper">
+                <div>One</div>
+                <div>Two</div>
+                <div>Three</div>
+                <div>Four</div>
+                <div>Five</div>
+            </div>
+
+
+            .wrapper {
+                 width: 500px;
+                 display: flex;
+                 flex-wrap: wrap;
+            }
+             .wrapper > div {
+                  flex: 1 1 150px;
+             }
+
+Grid:
+            <div class="wrapper">
+                <div>One</div>
+                <div>Two</div>
+                <div>Three</div>
+                <div>Four</div>
+                <div>Five</div>
+            </div>
+
+
+            .wrapper {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+
+->What are combinators? give examples of how you can use them?
+          A combinator is something that explains the relationship between the selectors.
+    There are four different combinators in CSS:
+
+             - descendant selector (space)
+             - child selector (>)
+             - adjacent sibling selector (+)
+             - general sibling selector (~)     
+
+    example:
+    HTML
+    <div>
+         <p> 1- the div.</p>
+         <p> 2- the div.</p>
+         <section><p> 3- in the div.</p></section>
+    </div>  
+
+    -The descendant selector matches all elements that are descendants of a specified element.
+    The following example selects all <p> elements inside <div> elements: 
+                  div p {
+                     background-color: yellow;
+                   }
+
+    -The child selector selects all elements that are the children of a specified element.
+    The following example selects all <p> elements that are children of a <div> element:
+
+                    div > p {
+                         background-color: yellow;
+                    }
+
+    -The adjacent sibling selector is used to select an element that is directly after another specific element.
+    The following example selects the first <p> element that are placed immediately after <div> elements:
+         div + p {
+            background-color: yellow;
+          }
+
+    -The child selector selects all elements that are the children of a specified element.
+    The following example selects all <p> elements that are children of a <div> element:
+             div > p {
+                  background-color: yellow;
+              }
+
+
+->What does object-fit do?
+         The object-fit property is used to specify how an <img> or <video> should be resized to fit its container.
+Syntax :   object-fit: contain;
+           object-fit: cover;
+           object-fit: fill;
+           object-fit: none;
+           object-fit: scale-down;
+
+->What does rotate do?
+          The rotate() CSS function defines a transformation that rotates an element around a fixed point
+          on the 2D plane, without deforming it. Its result is a <transform-function> data type.
+
+          Example:
+          HTML
+              <div class="rotated">Rotated</div>
+          CSS
+               .rotated {
+                        transform: rotate(45deg); 
+                         background-color: blue;
+                }
+
+->What rule can be used to define animations
+         An animation lets an element gradually change from one style to another.
+
+         When you specify CSS styles inside the @keyframes rule, the animation will gradually change from 
+         the current style to the new style at certain times.     
+
+->When working with attribute selectors, how can you select elements which contain a particular attribute value?
+          The [attribute|="value"] selector is used to select elements with the specified attribute, 
+          whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
+
+          example:
+              [class|="top"] {
+                   background: yellow;
+                }
+
+->What does @media do?
+        The @media rule is used in media queries to apply different styles for different media types/devices.
+
+            Media queries can be used to check many things, such as:
+
+                    width and height of the viewport
+                    width and height of the device
+                    orientation -is the tablet/phone in landscape or portrait mode?
+                    resolution
+         
+->What can be used to override properties of an element?
+              To override the CSS properties of a class using another class, we can use the !important directive. 
+              In CSS, !important means “this is important”, and the property:value pair that has this directive is 
+              always applied even if the other element has higher specificity.
+
+->How can you select every alternate elements in a list of elements using css?
+        Using nth-child(n) selector we can select every alternate elements in a list of elements.
+        Odd and even are keywords that can be used to match child elements whose index is odd or even 
+
+        p:nth-child(odd) {
+                background: red;
+           }
+
+        p:nth-child(even) {
+            background: lightgreen;
+         }
+
+->What is the ranking of selectors with respect to specificity
+           There are four categories which define the specificity level of a selector:
+
+I                 Inline styles - Example: <h1 style="color: pink;">
+                  IDs - Example: #navbar
+                  Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+                  Elements and pseudo-elements - Example: h1, :before
+         
+               1000 - Inline/Style Tag
+               Hundreds - One for each ID Selector
+               Tens - One for each class selector, attribute selector, pseudo-class contained 
+                        inside the overall selector.
+               Ones - One for each element selector, pseudo-element contained inside the overall selector.
+
+->how can we apply same styles to multiple selectors?
+          CSS allows us to group multiple selectors that share the same declaration to save space 
+          these selectors are called as group selectors
+    example:
+       dive#main, div#sidebar {
+             border:1px solid red;
+        }
+
+->how to add comments on css?
+       To comment in CSS, we have to place text(comment) inside /* */ marks. This tells the browser
+        that they are notes and should not be rendered on the front end.
+
+->Why do we use pseudo-class?
+         CSS pseudo-classes are used to add special effects to some selectors.(already answered)
+
+
+->What are the differences between relative and absolute in CSS?
+        Relative	                                          Absolute
+
+An element with position: relative; is             An element with position: absolute; is positioned
+ positioned relative to its normal position.	   relative to the nearest positioned ancestor. However; 
+                                                    if an absolute positioned element has no positioned 
+                                                    ancestors, it uses   the document body, and moves 
+                                                    along with page scrolling.
+
+
+Setting the top, right, bottom, and left             Absolute positioned elements are removed from the                                                
+properties of a relatively-positioned                 normal flow, and can overlap elements. 
+element will cause it to be adjusted away 
+from its normal position. Other content will 
+not be adjusted to fit into any gap 
+left by the element.	
+
+
+
+
+

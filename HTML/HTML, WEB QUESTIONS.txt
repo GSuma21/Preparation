@@ -1,0 +1,293 @@
+-> What is !important ?
+           The !important rule in CSS is used to add more importance to a property or value than normal. If we use 
+    the !important rule, it will override all previous styling rules for that specific property on that element.
+
+-> What is the box model?
+            The CSS box model is a box that wraps around every HTML element. It consists of: 
+    margins, borders, padding, and the actual content. 
+         Content - The content of the box, where text and images appear
+         Padding - Clears an area around the content. The padding is transparent
+         Border - A border that goes around the padding and content
+         Margin - Clears an area outside the border. The margin is transparent
+
+-> What is the difference between position absolute, relative and fixed?
+               The position property specifies the type of positioning method used for an element 
+    position: absolute;
+             An element with position: absolute; is positioned relative to the nearest positioned ancestor.
+             However; if an absolute positioned element has no positioned ancestors, it uses the document body, 
+             and moves along with page scrolling.
+    position: relative;
+              An element with position: relative; is positioned relative to its normal position.
+               Setting the top, right, bottom, and left properties of a relatively-positioned element 
+               will cause it to be adjusted away from its normal position. Other content will not be 
+               adjusted to fit into any gap left by the element.
+    position: fixed;
+              An element with position: fixed; is positioned relative to the viewport, which means 
+             it always stays in the same place even if the page is scrolled. The top, right, bottom, 
+            and left properties are used to position the element.
+           A fixed element does not leave a gap in the page where it would normally have been located.
+
+-> What is CSS positioning?
+            The position property specifies the type of positioning method used for an element.
+            There are five different position values:
+                    static
+                    relative
+                    fixed
+                    absolute
+                     sticky
+            Elements are then positioned using the top, bottom, left, and right properties. 
+            However, these properties will not work unless the position property is set first. 
+
+-> the difference between display none and display hidden
+
+display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them.
+visibility:hidden; also hides an element. However, the element will still take up the same space as before. 
+The element will be hidden, but still affect the layout.
+
+->Difference between flex and grid? Where to use it?
+
+Grid:CSS Grid Layout, is a two-dimensional grid-based layout system with rows and columns, making it 
+easier to design web pages without having to use floats and positioning.
+ Like tables, grid layout allow us to align elements into columns and rows.
+
+Flex: The CSS Flex offers a one-dimensional layout. It is helpful in allocating and aligning 
+the space among items in a container (made of grids). It works with all kinds of display devices
+ and screen sizes.
+To get started you have to define a container element as a grid with display: flex;
+
+One Vs Two Dimension:Grid is made for two-dimensional layout while Flexbox is for one. 
+                     This means Flexbox can work on either row or columns at a time, but Grids can work on both
+Content-First vs Layout-First:Major Uniqueness between Flexbox and Grids is that the former works on content
+                         while the latter is based on the layout.
+                         The Flexbox layout is best suited to application components and small-scale layouts, 
+                         while the Grid layout is designed for larger-scale layouts that are not linear in design.
+
+    Property                            Grid                              Flexbox
+
+    Dimension                       Two – Dimensional                 One – Dimensional
+
+    Features                   Can flex combination of items          Can push content element
+                            through space-occupying Features            to extreme alignment
+                               
+   Support Type                       Layout First                        Content First
+
+
+->What is BEM?
+   BEM (which stands for Block-Element-Modifier) is a naming convention standard for CSS class names.
+   BEM naming provides three specific benefits:
+                 It communicates purpose or function
+                 It communicates component structure
+                 It sets a consistent low-level of specificity for styling selectors
+
+     A BEM class name includes up to three parts.
+
+                 Block: The outermost parent element of the component is defined as the block.
+                 Element: Inside of the component may be one or more children called elements.
+                 Modifier: Either a block or element may have a variation signified by a modifier.
+
+
+->What is the z-index? What is the stacking context?
+
+         The z-index property in CSS controls the vertical stacking order of elements that overlap. 
+         z-index only affects elements that have a position value which is not static.
+
+
+         A stacking context is an element that contains a set of layers. Within a local stacking context, 
+         the z-index values of its children are set relative to that element rather than to the document root.
+
+         Each stacking context is self-contained - after the element's contents are stacked, the whole 
+         element is considered in the stacking order of the parent stacking context.
+
+->Explain briefly what happens when you hit a url? explain DNS lookup
+         -After hitting the URL, the browser cache is checked. As browser maintains its DNS records for some
+         amount of time for the websites you have visited earlier. Hence, firstly, DNS query runs here to find the IP address associated with the domain name.
+        - The second place where DNS query runs in OS cache followed by router cache.
+         -If in the above steps, a DNS query does not get resolved, then it takes the help of resolver server. 
+         Resolver server is nothing but your ISP (Internet service provider). The query is sent to ISP where DNS query
+          runs in ISP cache.
+         -If in 3rd steps as well, no results found, then request sends to top or root server of the DNS hierarchy.
+          There it never happens that it says no results found, but actually it tells, from where this information
+           you can get. If you are searching IP address of the top level domain (.com,.net,.Gov,. org). It tells the resolver server to search TLD server (Top level domain).
+         -Now, resolver asks TLD server to give IP address of our domain name. TLD stores address information 
+         of domain name. It tells the resolver to ask it to Authoritative Name server.
+         -The authoritative name server is responsible for knowing everything about the domain name. 
+         Finally, resolver (ISP) gets the IP address associated with the domain name and sends it back to the browser.
+
+                      After getting an IP address, resolver stores it in its cache so that next time, if the same 
+                      query comes then it does not have to go to all these steps again. It can now provide IP address
+                       from their cache.
+
+->What is a URLs full form? Explain what a url is and the four parts it consists of The protocol in use The hostname 
+of the server The location of the file The arguments to the file
+
+   URL fullform is Uniform Resource Locator;
+   A URL is the address of a given unique resource on the Web.
+
+   The four main components of URLs are the protocol, domain, path, and query.
+   Protocol
+           The protocol or scheme of a URL indicates the method that will be used for transmitting or exchanging data.
+     Domain
+            The domain or hostname of a URL is a user-friendly expression of the Internet Protocol (IP) 
+            address of a website. It points to the location of the website's host server. 
+    Path
+            The path that follows the domain name inside a URL points to a specific file or other resource location.
+             It can also include a query string.
+    Query
+           The query string, also known as a fragment identifier, is frequently used for internal searches 
+           and is commonly preceded by a question mark (?).
+
+->What is HTTP protocol?
+      HTTP is a protocol for fetching resources such as HTML documents. It is the foundation of
+       any data exchange on the Web and it is a client-server protocol, which means requests are initiated 
+       by the recipient, usually the Web browser.
+
+-> What is TCP Protocol?
+             TCP stands for Transmission Control Protocol a communications standard that enables application
+              programs and computing devices to exchange messages over a network. It is designed to send packets a
+              cross the internet and ensure the successful delivery of data and messages over networks.
+            
+-> Explain all the different HTTP methods?
+            HTTP defines a set of request methods to indicate the desired action to be performed for a given resource.
+
+            GET - The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+
+           HEAD - The HEAD method asks for a response identical to a GET request, but without the response body.
+
+           POST-The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.
+
+          PUT- The PUT method replaces all current representations of the target resource with the request payload.
+
+         DELETE- The DELETE method deletes the specified resource.
+
+          CONNECT-The CONNECT method establishes a tunnel to the server identified by the target resource.
+
+        OPTIONS- The OPTIONS method describes the communication options for the target resource.
+
+       TRACE-The TRACE method performs a message loop-back test along the path to the target resource.
+
+         PATCH-The PATCH method applies partial modifications to a resource.
+
+->What are HTTP headers?
+          An HTTP header is a field of an HTTP request or response that passes additional 
+          context and metadata about the request or response.
+
+->What are some HTTP response codes? what does it mean? 2xx, 3xx, 4xx, 5xx
+       Status codes are issued by a server in response to a client's request made to the server.
+
+       All HTTP response status codes are separated into five classes or categories. The first digit of the status code defines the class of response, while the last two digits do not have any classifying or categorization role. There are five classes defined by the standard:
+
+         1xx informational response – the request was received, continuing process
+        2xx successful – the request was successfully received, understood, and accepted
+         3xx redirection – further action needs to be taken in order to complete the request
+        4xx client error – the request contains bad syntax or cannot be fulfilled
+         5xx server error – the server failed to fulfil an apparently valid request
+
+->What does cache control on http response mean?
+       Cache-control is an HTTP header used to specify browser caching policies in both client 
+       requests and server responses.
+
+->What is polling?
+              The Polling API is used to retrieve the reporting data from a request. 
+              The Polling API endpoint will respond to successful requests with compressed gzip. 
+              The response must be uncompressed to retrieve the data.
+
+
+
+->What is long polling?
+
+            HTTP Long Polling is a technique used to push information to a client as soon as possible on the server.
+             As a result, the server does not have to wait for the client to send a request.
+
+->What are web sockets?
+        WebSockets are one of many different tools for building web applications that provide instant, 
+        real-time updates and communication. The WebSocket Protocol establishes full-duplex, bidirectional 
+        communication between a client and server.
+
+
+->How is web sockets different from HTTP?
+        WebSocket is an event-driven protocol, which means you can actually use it for truly realtime communication. 
+        Unlike HTTP, where we have to constantly request updates, with websockets, updates are sent immediately when they are available. 
+         WebSockets keeps a single, persistent connection open while eliminating latency problems 
+         that arise with HTTP request/response-based methods.
+
+
+-> What is HTTPS?
+         HTTPS (Hypertext Transfer Protocol Secure) is an internet communication protocol that protects the integrity 
+         and confidentiality of data between the user's computer and the site. 
+         Users expect a secure and private online experience when using a website.
+
+->What is Cross Origin Resource Sharing? ( CORS ) Why do we need it?
+        Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate 
+        any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+         CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the 
+         cross-origin resource, in order to check that the server will permit the actual request.
+
+->What does Access-Control-Allow-Origin header do?
+     
+     Access-Control-Allow-Origin specifies either a single origin which tells browsers to allow that origin
+      to access the resource; or else — for requests without credentials — the " * " wildcard tells browsers 
+      to allow any origin to access the resource.
+
+-> What is clickjacking? How do you fix it?
+           Clickjacking is an attack that fools users into thinking they are clicking on one thing when they are
+            actually clicking on another. Its other name, user interface (UI) redressing, better describes 
+            what is going on.
+
+            Using the X-Frame-Options header
+        A better approach to prevent clickjacking attacks is to ask the browser to block any attempt to load
+         your website within an iframe. You can do it by sending the X-Frame-Options HTTP header.
+
+->What are some performance metrics for your website?
+      1) Number Of Visitors (And Their Source) One of the key metrics to check is the number of visitors your site sees each month. ...
+      2) Bounce Rate
+      3) Average Time On Page
+      4) CTA Click-Through Rate
+      5) Conversion Rate
+      6) Goal Progress
+      etc.
+
+->What does the following term mean?
+Time to first byte,
+Page load time
+
+  Time to first byte:Time to First Byte (TTFB) refers to the time between the browser requesting a page and
+   when it receives the first byte of information from the server.
+  Page load time:page load time is the average amount of time it takes for a page to show up on your screen. 
+  It's calculated from initiation (when you click on a page link or type in a Web address) to 
+  completion (when the page is fully loaded in the browser).
+
+->What do CDN or Content Delivery Networks do? When do you need a CDN?
+     A content delivery network (CDN) refers to a geographically distributed group of servers which work 
+     together to provide fast delivery of Internet content.
+     A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages,
+      javascript files, stylesheets, images, and videos.
+
+->What is the difference between Client Side Renderring and Server Side Renderring?
+
+    Differences between client-side and server-side
+Client-side                                                             Server-side
+
+Does not need interaction with the server                          Requires interaction with the server
+Runs on the user’s computer                                        Runs on the web server
+Reduces load on the server’s proccessing unit                      Allows the server to provide dynamic websites tailored to the user. Increases the processing load on server.
+Languages used: HTML, CSS, JavaScript                              Languages used: PHP, ASP.net, Python
+
+
+
+->What is Progressive Renderring?
+        Progressive Rendering is the technique of sequentially rendering portions of a webpage in the server 
+        and streaming it to the client in parts without waiting for the whole page to rendered
+
+->What is the difference between Preloading and Prefetching resources?
+
+             Preload is an early fetch instruction to the browser to request a resource needed for a page 
+             (key scripts, Web Fonts, hero images).
+
+             Prefetch serves a slightly different use case — a future navigation by the user
+              where fetched resources and requests need to persist across navigations.
+
+->What are service workers?
+          A service worker is a type of web worker. It's essentially a JavaScript file that runs separately from the
+          main browser thread, intercepting network requests, caching or retrieving resources from the cache,
+          and delivering push messages.
+

@@ -1,0 +1,73 @@
+-> What are some new things happening in the web?
+       Blockchain Technology. 
+       Progressive Web Apps (PWA)
+      Internet of Things (IoT) 
+      Voice Search Optimization
+
+
+->Explain a project that you have built?
+ 
+ We have clone the sephora, myntra website.
+ Sephora is a French multinational retailer of personal care and beauty products. 
+ Featuring nearly 340 brands, along with its own private label, Sephora Collection,
+  Sephora offers beauty products including cosmetics, skincare, body, fragrance, nail color,
+   beauty tools, body lotions and haircare.
+It was front-end project in masai. We did this project in 3 members group and in a week.
+We used html css javascript localstorage api fetch My part in this
+ prject is create product page and some ui part in front end.
+
+ Mytra is full front end and backend webite. We did it in 3 members group in a week.
+ we have used react, html,css,javascript,mongodb in this project.
+My part in this prject is  ui part in front end and i have created login register page as authentication in backend.
+
+
+->Whats something exciting that you have built?
+  i have cloned many website using front end and backend 
+  some concepts like debouncing and throttling is very different and im very excited to build using this properties.
+
+
+->What are you most excited about?
+
+    I want to build some live projects Im very exited about that.
+
+->Why do coding standards matter? What are some patterns you follow?
+
+         Coding standards are collections of rules and guidelines that determine the programming style,
+          procedures, and methods for a programming language.
+         Without the coding conventions, every individual in a team will settle their coding styles. 
+         It will not be easy to maintain and debug the code in the near future.
+      
+        Benefits of coding standards
+
+                Easy team integration
+                Increased code quality efficiency and easy for maintaining
+                Reduce code complexity
+                Reduce development cost
+
+        I will follow    Naming Conventions
+                         File and folder Naming and Organization
+                         Formatting and Indentation
+                         Commenting and Documenting
+
+-> How do you go about managing responsive websites?
+
+-I will see the content 
+-apply media query
+- I will start with mobile styles as my foundation 
+-Use flex grid concepts
+-i Will chnage navigation accordingly
+-Use Responsive Images and Videos
+- Typography
+
+
+
+->What do you care about the most when you write software?
+
+I will care about 
+ - code should be readable with Comment
+ -Code should be easy to understand, easy to change
+ -I will follow the coding standards 
+
+
+
+*I dont know how to answer all the questions i Have tried this If possible  Please send my mistakes 

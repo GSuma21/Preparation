@@ -1,0 +1,18 @@
+<script>
+
+function toggler() {
+    var a = 1;
+    return function inner(){     
+        console.log(a++)
+    }
+   
+}
+
+const toggle = toggler()
+
+toggle()
+toggle()
+toggle()
+
+
+</script>
